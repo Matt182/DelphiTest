@@ -1,0 +1,56 @@
+unit qq;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Button1: TButton;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Label4: TLabel;
+    Label5: TLabel;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+var a, b, c, d, x1, x2: real;
+begin
+  a:=StrToFloat(Edit1.text);
+  b:=StrToFloat(Edit2.text);
+  c:=StrToFloat(Edit3.text);
+  d:=b*b-4*a*c;
+  if d>=0 then
+          begin
+          x1:=(-b-sqrt(d))/(2*a);
+          x2:=(-b+sqrt(d))/(2*a);
+          label4.Caption:='x1='+FloatToStr(x1);
+          label5.Caption:='x2='+FloatToStr(x2);
+          end
+          else begin
+            label4.caption:='Kornei netu';
+            label5.caption:='Sovsem netu! Konchilis';
+            end;
+
+
+end;
+
+end.
